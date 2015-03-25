@@ -1,7 +1,7 @@
 {
   "name": "baser",
   "version": "1.0.0",
-  "description": "",
+  "description": "A wordbase helper proof of concept.",
   "main": "index.coffee",
   "scripts": {
     "test": "npm test"
@@ -14,5 +14,13 @@
   "dependencies": {
     "spellchecker": "^2.2.0",
     "underscore": "^1.8.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:blainesch/baser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blainesch/baser/issues"
+  },
+  "homepage": "https://github.com/blainesch/baser"
 }
