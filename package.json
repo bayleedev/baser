@@ -1,0 +1,18 @@
+{
+  "name": "baser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Blaine Schmeisser",
+  "license": "MIT",
+  "devDependencies": {
+    "pryjs": "0.0.11"
+  },
+  "dependencies": {
+    "spellchecker": "^2.2.0",
+    "underscore": "^1.8.2"
+  }
+}
