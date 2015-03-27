@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2 Wordbase Helper
+  div.answers
+    h3 Word List
+    ul
+      li Hello
+  div.board
+    form(method='post', action='/board')
+      ul.board
+        each row in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+          li
+            ul
+              each column in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                li
+                  input(name='board[#{row}][#{column}]')
+      input(type='submit', value='Generate')

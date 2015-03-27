@@ -5,5 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.post('/board', function(req, res, next) {
+  //board = new Board(req.params.board);
+  //res.send(board.find());
+});
 
 module.exports = router;
