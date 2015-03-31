@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var pry = require('pryjs');
+var _ = require('underscore');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +9,8 @@ router.get('/', function(req, res, next) {
 });
 router.post('/board', function(req, res, next) {
   //board = new Board(req.params.board);
-  //res.send(board.find());
+  eval(pry.it);
+  res.send(JSON.stringify(req.body));
 });
 
 module.exports = router;
