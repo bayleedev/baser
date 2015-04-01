@@ -6,13 +6,21 @@ class Board
 
   constructor: (@pieces) ->
 
-  find_words: (points) ->
+  find_words: (points, callback = (p) -> p) ->
     @join() unless @joined
     best = []
     for point in points
       words = @pieces[point[0]][point[1]].iterate()
-      best.push word if word.isWord() for word in words
-    best
+      for word in words
+        best.push word if word.isWord()
+    callback(best)
+
+  all: (callback) ->
+    points = []
+    for r in [0..12]
+      for c in [0..9]
+        points.push [r, c]
+    @find_words(points, callback)
 
   join: ->
     @joined = true

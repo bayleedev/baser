@@ -32,6 +32,9 @@ class Word
   toString: ->
     @word()
 
+  toJson: ->
+    {word: @word(), chart: @chart()}
+
   chart: ->
      _.inject(@nodes, ((memo, el) -> memo.push([el.row, el.column]); memo), [])
 

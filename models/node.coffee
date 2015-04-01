@@ -9,6 +9,7 @@ class Node
   sibs: {}
 
   constructor: (@letter, @row, @column) ->
+    @letter ||= '!'
     @sibs = {}
 
   iterate: (word = new Word) ->
