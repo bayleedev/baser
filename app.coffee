@@ -4,7 +4,6 @@ favicon = require('serve-favicon')
 logger = require('morgan')
 cookieParser = require('cookie-parser')
 bodyParser = require('body-parser')
-lessMiddleware = require('less-middleware')
 multer = require('multer')
 
 routes = require('./routes/index')
@@ -22,7 +21,6 @@ app.use bodyParser.json()
 app.use bodyParser.urlencoded(extended: false)
 app.use multer()
 app.use cookieParser()
-app.use lessMiddleware(__dirname + '/public')
 app.use express.static(path.join(__dirname, 'public'))
 
 app.use '/', routes

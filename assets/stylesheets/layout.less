@@ -1,0 +1,122 @@
+@blue: #22cae6;
+@orange: #ff8800;
+@blue-dark: #2E3641;
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  &:before, &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: fixed;
+    left: 0;
+  }
+  &:before {
+    top: 0;
+    border-top: 10px solid @blue;
+  }
+  &:after {
+    bottom: 0;
+    border-bottom: 10px solid @orange;
+  }
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div.answers, div.tools {
+  text-indent: 10px;
+  max-width: 300px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid @blue-dark;
+  border-top: 0;
+  padding-bottom: 10px;
+  border-radius: 6px 6px 3px 3px;
+  .words {
+    max-height: 275px;
+    overflow: auto;
+    span {
+      text-indent: 0;
+      display: block;
+      text-align: center;
+      padding: 3px;
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+  h3 {
+    text-indent: 0;
+    border-radius: 3px 3px 0 0;
+    background-color: @blue-dark;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    select {
+      margin-left: 10px;
+    }
+  }
+}
+
+div.board {
+  float: right;
+}
+
+ul.board {
+  ul {
+    clear: both;
+  }
+  ul li {
+    float: left;
+  }
+  input {
+    width: 40px;
+    text-align: center;
+    font-size: 20pt;
+    &.ng-invalid {
+      border: 2px inset red;
+    }
+    &.ng-valid {
+      border: 2px inset;
+    }
+    &.orange {
+      background-color: lighten(@orange, 10%);
+    }
+    &.blue {
+      background-color: lighten(@blue, 10%);
+    }
+    &.selected {
+      background-color: darken(@blue, 10%);
+    }
+    &[ng-click] {
+      width: auto;
+    }
+  }
+}
+input[type=submit] {
+  margin: 10px 10px 30px 0;
+  font-size: 20pt;
+  border: 0;
+  box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.1) inset;
+  border-radius: 6px 6px 6px 6px;
+  background-color: @blue;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  cursor: hand;
+  &:hover {
+    background-color: darken(@blue, 10%);
+  }
+}
