@@ -3,8 +3,12 @@ html(ng-app='baserApp')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/layout.css')
-    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js')
-    script(text='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js')
+    script(text='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js')
     script(type='text/javascript', src='/javascripts/main.js')
   body(ng-controller='BoardCtrl')
+    .github-fork-ribbon-wrapper.right
+        .github-fork-ribbon
+            a(href='https://github.com/blainesch/baser') Fork me on GitHub
     block content
