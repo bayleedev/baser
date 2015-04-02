@@ -17,6 +17,7 @@ block content
                   ng-pattern='/^[a-z]$/i'
                 )
       input(type='submit', value='Generate', ng-click="getWords()")
+      input(type='submit', value='Test Data', ng-click="testData()")
   div.tools
     h3 Tools
     ul
@@ -34,6 +35,11 @@ checked='checked')
         input(ng-click='changeTool("clear")', type='radio', name='tool', id='clear', value='clear')
         label(for='clear') Clear Color
   div.answers
-    h3 Word List
+    h3
+      span Word List
+      select(ng-model='orderBy', ng-change='orderWords()')
+        option(value='Length') Length
+        option(value='Highest') Highest
+        option(value='Lowest') Lowest
     ul.words
       li(ng-repeat="word in words" ng-click="highlightWord(word.chart)") {{ word.word }}
