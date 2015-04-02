@@ -1,6 +1,5 @@
 express = require('express')
 router = express.Router()
-pry = require('pryjs')
 _ = require('underscore')
 Board = require('../models/board')
 
