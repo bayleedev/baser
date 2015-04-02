@@ -8,18 +8,6 @@ class Word
   constructor: (nodes = []) ->
     @nodes = nodes
 
-  length: ->
-    @nodes.length
-
-  highest_letter: ->
-     _.inject(@nodes, ((memo, el) -> Math.min(memo, el.row)), 12)
-
-  lowest_letter: ->
-     _.inject(@nodes, ((memo, el) -> Math.max(memo, el.row)), 0)
-
-  indexOf: ->
-    @word().indexOf.apply(@word(), arguments)
-
   push: (node) ->
     @nodes.push node
 
@@ -28,9 +16,6 @@ class Word
 
   word: ->
      _.inject(@nodes, ((memo, el) -> memo += el.letter), '').toLowerCase()
-
-  toString: ->
-    @word()
 
   toJson: ->
     {word: @word(), chart: @chart()}
