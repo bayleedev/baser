@@ -42,6 +42,7 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
     responsePromise.success (data, status, headers, config) ->
       $scope.data = data
       $scope.words = data.words
+      $scope.orderWords()
 
   $scope.testData = ->
     for r in [0..12]
