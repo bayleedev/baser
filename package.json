@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node_modules/.bin/coffee ./bin/www",
-    "test": "mocha --recursive --compilers coffee:coffee-script/register ./spec"
+    "test": "mocha --recursive --compilers coffee:coffee-script/register ./spec",
+    "postinstall": "grunt"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
