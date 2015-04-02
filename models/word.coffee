@@ -5,8 +5,11 @@ class Word
 
   nodes: []
 
+  dictionary: null
+
   constructor: (nodes = []) ->
     @nodes = nodes
+    @dictionary = dictionary
 
   push: (node) ->
     @nodes.push node
@@ -24,9 +27,9 @@ class Word
      _.inject(@nodes, ((memo, el) -> memo.push([el.row, el.column]); memo), [])
 
   isWord: ->
-    dictionary.isWord(@word())
+    @dictionary.isWord(@word())
 
   isPossible: ->
-    dictionary.isWordPrefix(@word()) or @isWord()
+    @dictionary.isWordPrefix(@word()) or @isWord()
 
 module.exports = Word
