@@ -2,17 +2,38 @@ extends layout
 
 block content
   h2 Wordbase Helper
+  div.board
+    ul.board
+      each row in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        li
+          ul
+            each column in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+              li
+                input(
+                  ng-class='pointClass(#{row}, #{column})',
+                  ng-focus='changeColor(#{row}, #{column})',
+                  ng-blur='board[#{row}][#{column}].value = board[#{row}][#{column}].value.toUpperCase()',
+                  ng-model='board[#{row}][#{column}].value',
+                  ng-pattern='/^[a-z]$/i'
+                )
+      input(type='submit', value='Generate', ng-click="getWords()")
+  div.tools
+    h3 Tools
+    ul
+      li
+        input(ng-click='changeTool("type")', type='radio', name='tool', id='typing', value='typing',
+checked='checked')
+        label(for='typing') Typing
+      li
+        input(ng-click='changeTool("orange")', type='radio', name='tool', id='orange', value='orange')
+        label(for='orange') Opponent Color
+      li
+        input(ng-click='changeTool("blue")', type='radio', name='tool', id='blue', value='blue')
+        label(for='blue') My Color
+      li
+        input(ng-click='changeTool("clear")', type='radio', name='tool', id='clear', value='clear')
+        label(for='clear') Clear Color
   div.answers
     h3 Word List
-    ul
-      li Hello
-  div.board
-    form(method='post', action='/board')
-      ul.board
-        each row in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-          li
-            ul
-              each column in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-                li
-                  input(name='board[#{row}][#{column}]')
-      input(type='submit', value='Generate')
+    ul.words
+      li(ng-repeat="word in words" ng-click="highlightWord(word.chart)") {{ word.word }}

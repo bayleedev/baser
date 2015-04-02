@@ -9,7 +9,7 @@ class Node
   sibs: {}
 
   constructor: (@letter, @row, @column) ->
-    @letter ||= '!'
+    @letter = '!' unless (@letter || '').match /^[a-z]$/i
     @sibs = {}
 
   iterate: (word = new Word) ->
