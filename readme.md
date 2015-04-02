@@ -1,5 +1,7 @@
 ## Baser
 
+[![Build Status](https://travis-ci.org/blainesch/baser.svg?branch=master)](https://travis-ci.org/blainesch/baser)
+
 A wordbase (available on
 [iphone](https://itunes.apple.com/us/app/wordbase/id777638764?mt=8) and
 [android](https://play.google.com/store/apps/details?id=com.wordbaseapp&hl=en))
