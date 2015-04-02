@@ -11,7 +11,8 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
     $scope.tool = $tool
 
   $scope.changeColor = (row, column) ->
-    $scope.board[row][column].color = $scope.tool
+    if $scope.tool isnt 'type'
+      $scope.board[row][column].color = $scope.tool
 
   $scope.getBoard = ->
     _.inject $scope.board, ((memo, el) ->
