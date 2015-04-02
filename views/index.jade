@@ -42,4 +42,5 @@ checked='checked')
         option(value='Highest') Highest
         option(value='Lowest') Lowest
     ul.words
-      li(ng-repeat="word in words" ng-click="highlightWord(word.chart)") {{ word.word }}
+      li(ng-repeat="word in words" ng-click="highlightWord(word.chart)")
+         span {{ word.word }}

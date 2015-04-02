@@ -2,7 +2,7 @@ baserApp = angular.module('baserApp', [])
 baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.myColor = 'blue'
   $scope.tool = 'type'
-  $scope.orderBy = 'length'
+  $scope.orderBy = 'Length'
   $scope.words = []
   $scope.board = []
   $scope.board[r] = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}] for r in [0..12]
