@@ -1,6 +1,6 @@
 expect = require('chai').expect
 sinon = require('sinon')
-Word = require('../../mOdels/word')
+Word = require('../../models/word')
 Node = require('../../models/node')
 
 describe 'Word', ->
