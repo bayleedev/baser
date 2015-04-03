@@ -8,6 +8,7 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.board[r] = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}] for r in [0..12]
 
   $scope.changeTool = ($tool) ->
+    _gaq.push(['_trackEvent', 'Board', 'ChangeTool', $tool])
     $scope.tool = $tool
 
   $scope.changeColor = (row, column) ->
@@ -36,6 +37,7 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
     ), []
 
   $scope.getWords = ->
+    _gaq.push(['_trackEvent', 'Board', 'Generate', 'Generate'])
     responsePromise = $http.post('/board',
       board: $scope.getBoard()
       points: $scope.getPoints())
@@ -45,11 +47,13 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
       $scope.orderWords()
 
   $scope.testData = ->
+    _gaq.push(['_trackEvent', 'Board', 'Generate', 'Test Data'])
     for r in [0..12]
       for c in [0..9]
         $scope.board[r][c].value = String.fromCharCode(65 + Math.round(Math.random() * 10000) % 26)
 
   $scope.orderWords = ->
+    _gaq.push(['_trackEvent', 'Board', 'Order', $scope.orderBy])
     $scope.words = $scope['_orderWordsBy' + $scope.orderBy]($scope.words)
 
   $scope._orderWordsByLength = (words) ->
@@ -70,7 +74,8 @@ baserApp.controller('BoardCtrl', ['$scope', '$http', ($scope, $http) ->
       ), 0
     ).reverse()
 
-  $scope.highlightWord = (points) ->
+  $scope.highlightWord = (word, points) ->
+    _gaq.push(['_trackEvent', 'Board', 'Highlight', word])
     for r in [0..12]
       for c in [0..9]
         $scope.board[r][c].selected = false

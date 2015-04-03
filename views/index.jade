@@ -22,25 +22,25 @@ block content
     h3 Tools
     ul
       li
-        input(ng-click='changeTool("type")', type='radio', name='tool', id='typing', value='typing',
+        input(ng-click="changeTool('type')", type='radio', name='tool', id='typing', value='typing',
 checked='checked')
         label(for='typing') Typing
       li
-        input(ng-click='changeTool("orange")', type='radio', name='tool', id='orange', value='orange')
+        input(ng-click="changeTool('orange')", type='radio', name='tool', id='orange', value='orange')
         label(for='orange') Opponent Color
       li
-        input(ng-click='changeTool("blue")', type='radio', name='tool', id='blue', value='blue')
+        input(ng-click="changeTool('blue')", type='radio', name='tool', id='blue', value='blue')
         label(for='blue') My Color
       li
-        input(ng-click='changeTool("clear")', type='radio', name='tool', id='clear', value='clear')
+        input(ng-click="changeTool('clear')", type='radio', name='tool', id='clear', value='clear')
         label(for='clear') Clear Color
   div.answers
     h3
       span Word List
-      select(ng-model='orderBy', ng-change='orderWords()')
+      select(ng-model='orderBy', ng-change="orderWords()")
         option(value='Length') Length
         option(value='Highest') Highest
         option(value='Lowest') Lowest
     ul.words
-      li(ng-repeat="word in words" ng-click="highlightWord(word.chart)")
+      li(ng-repeat="word in words" ng-click="highlightWord(word.word, word.chart)")
          span {{ word.word }}

@@ -8,6 +8,16 @@ html(ng-app='baserApp')
     script(text='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js')
     script(type='text/javascript', src='/javascripts/main.js')
   body(ng-controller='BoardCtrl')
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-61518244-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     .github-fork-ribbon-wrapper.right
         .github-fork-ribbon
             a(href='https://github.com/blainesch/baser') Fork me on GitHub
