@@ -1,5 +1,10 @@
 ## Baser
 
+**DEPRECATED**
+
+Use [baser-react](https://github.com/blainesch/baser-react) instead. Rewritten using
+React, with no server side component.
+
 [![Build Status](https://travis-ci.org/blainesch/baser.svg?branch=master)](https://travis-ci.org/blainesch/baser)
 
 A wordbase (available on
